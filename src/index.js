@@ -40,3 +40,73 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+
+const aTags = Array.from(document.querySelectorAll('nav a'))
+for (let i = 0 ; i < aTags.length ; i++) {
+  aTags[i].textContent = siteContent.nav[`nav-item-${i+1}`]
+  aTags[i].classList.add("italic")
+}
+
+const ctaH1 = document.querySelector('section .cta-text h1')
+ctaH1.textContent = siteContent.cta.h1
+
+const ctaButton = document.querySelector('section .cta-text button')
+ctaButton.textContent = siteContent.cta.button
+
+const logoImg = document.querySelector('#logo-img')
+logoImg.setAttribute("src", siteContent.images["logo-img"])
+
+const ctaImg = document.querySelector("#cta-img")
+ctaImg.setAttribute("src", siteContent.images["cta-img"])
+
+const featuresContent = document.querySelector(".main-content .top-content .text-content")
+
+const featuresH4 = featuresContent.querySelector("h4")
+const featuresP = featuresContent.querySelector("p")
+featuresH4.textContent = siteContent["main-content"]["features-h4"]
+featuresP.textContent = siteContent["main-content"]["features-content"]
+
+const aboutContent = featuresContent.nextElementSibling
+const aboutH4 = aboutContent.querySelector("h4")
+const aboutP = aboutContent.querySelector("p")
+aboutH4.textContent = siteContent["main-content"]["about-h4"]
+aboutP.textContent = siteContent["main-content"]["about-content"]
+
+const middleImg = document.querySelector("#middle-img")
+middleImg.setAttribute("src", siteContent.images["accent-img"])
+
+const servicesContent = document.querySelector(".bottom-content .text-content")
+const servicesH4 = servicesContent.querySelector("h4")
+const servicesP = servicesContent.querySelector("p")
+servicesH4.textContent = siteContent["main-content"]["services-h4"]
+servicesP.textContent = siteContent["main-content"]["services-content"]
+
+const productContent = servicesContent.nextElementSibling
+const productH4 = productContent.querySelector("h4")
+const productP = productContent.querySelector("p")
+productH4.textContent = siteContent["main-content"]["product-h4"]
+productP.textContent = siteContent["main-content"]["product-content"]
+
+const visionContent = productContent.nextElementSibling
+const visionH4 = visionContent.querySelector("h4")
+const visionP = visionContent.querySelector("p")
+visionH4.textContent = siteContent["main-content"]["vision-h4"]
+visionP.textContent = siteContent["main-content"]["vision-content"]
+
+const contact = document.querySelector(".contact")
+const contactH4 = contact.querySelector("h4")
+contactH4.textContent = siteContent.contact["contact-h4"]
+
+const contactAddress = contactH4.nextElementSibling
+const contactPhone = contactAddress.nextElementSibling
+const contactEmail = contactPhone.nextElementSibling
+
+contactAddress.textContent = siteContent.contact.address
+contactPhone.textContent = siteContent.contact.phone
+contactEmail.textContent = siteContent.contact.email
+
+const footerContent = document.querySelector("footer a")
+
+footerContent.textContent = siteContent.footer.copyright
+footerContent.classList.add("bold")
